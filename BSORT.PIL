@@ -1,0 +1,48 @@
+*BSORT
+REM: PILOT has no arrays - demonstrate with 5 values using variables
+T: Bubble Sort Demo (5 values)
+C: V1=64
+C: V2=25
+C: V3=12
+C: V4=90
+C: V5=8
+T: Before: #V1 #V2 #V3 #V4 #V5
+REM: Pass 1
+JN(*S12): V1>V2
+C: T=V1
+C: V1=V2
+C: V2=T
+*S12
+JN(*S23): V2>V3
+C: T=V2
+C: V2=V3
+C: V3=T
+*S23
+JN(*S34): V3>V4
+C: T=V3
+C: V3=V4
+C: V4=T
+*S34
+JN(*S45): V4>V5
+C: T=V4
+C: V4=V5
+C: V5=T
+*S45
+REM: Pass 2
+JN(*P2S12): V1>V2
+C: T=V1
+C: V1=V2
+C: V2=T
+*P2S12
+JN(*P2S23): V2>V3
+C: T=V2
+C: V2=V3
+C: V3=T
+*P2S23
+JN(*P2S34): V3>V4
+C: T=V3
+C: V3=V4
+C: V4=T
+*P2S34
+T: After:  #V1 #V2 #V3 #V4 #V5
+E:

@@ -1,0 +1,27 @@
+*SIEVE
+REM: PILOT has limited array/loop support - this demos the concept
+T: Sieve of Eratosthenes
+T: Finding primes up to 30 by trial division
+T: (PILOT lacks arrays, using explicit checks)
+T: 
+C: N=2
+*LOOP
+C: ISPRIME=1
+C: D=2
+*INNER
+C: SQ=D*D
+JY(*NEXTD): SQ>N
+C: R=N-(N/D)*D
+JN(*NOTPRIME): R#0
+C: ISPRIME=0
+*NOTPRIME
+*NEXTD
+C: D=D+1
+JY(*INNER): D<N
+JN(*SKIP): ISPRIME#1
+T: #N is prime
+*SKIP
+C: N=N+1
+JY(*LOOP): N<=30
+T: Done.
+E:

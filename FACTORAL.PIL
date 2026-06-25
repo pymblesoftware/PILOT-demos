@@ -1,0 +1,23 @@
+*START
+T: Factorial Calculator
+T: Enter a number (0-12):
+A: #N
+JN(*TOOBIG): N<=12
+JN(*TOOSMALL): N>=0
+C: F=1
+C: I=1
+*LOOP
+JN(*DONE): I<=N
+C: F=F*I
+C: I=I+1
+J: *LOOP
+*DONE
+T: #N factorial = #F
+J: *START
+*TOOBIG
+T: Number too large (max 12)
+J: *START
+*TOOSMALL
+T: Please enter 0 or greater
+J: *START
+E:

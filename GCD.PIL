@@ -1,0 +1,22 @@
+*GCD
+T: GCD Calculator (Euclidean Algorithm)
+T: Enter first number:
+A: #A
+T: Enter second number:
+A: #B
+C: X=A
+C: Y=B
+*LOOP
+JY(*DONE): Y=0
+C: R=X-(X/Y)*Y
+C: X=Y
+C: Y=R
+J: *LOOP
+*DONE
+T: GCD(#A, #B) = #X
+T: 
+T: Another calculation? (type YES or NO)
+A:
+MY: YES
+JY(*GCD): YES
+E:
